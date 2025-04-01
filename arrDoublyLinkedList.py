@@ -25,3 +25,8 @@ class arrayDoublyLinkedList:
         if index < 0 or index >= len(self.array):
             raise IndexError("Index out of range")
         return self.array[index]
+
+    def clone(self):
+        newDoubleLinkedList = arrayDoublyLinkedList()
+        newDoubleLinkedList.array = self.array.copy()
+        return newDoubleLinkedList
