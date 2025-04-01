@@ -45,3 +45,6 @@ class arrayDoublyLinkedList:
             if self.array[index] == element:
                 return index
         return -1
+
+    def clear(self):
+        self.array.clear()
