@@ -30,3 +30,6 @@ class arrayDoublyLinkedList:
         newDoubleLinkedList = arrayDoublyLinkedList()
         newDoubleLinkedList.array = self.array.copy()
         return newDoubleLinkedList
+
+    def reverse(self):
+        self.array.reverse()
