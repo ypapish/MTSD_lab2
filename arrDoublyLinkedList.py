@@ -20,3 +20,8 @@ class arrayDoublyLinkedList:
 
     def deleteAll(self, element: str):
         self.array = [elem for elem in self.array if elem != element]
+
+    def get(self, index: int):
+        if index < 0 or index >= len(self.array):
+            raise IndexError("Index out of range")
+        return self.array[index]
