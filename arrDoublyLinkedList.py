@@ -33,3 +33,9 @@ class arrayDoublyLinkedList:
 
     def reverse(self):
         self.array.reverse()
+
+    def findFirst(self, element: str) -> int:
+        try:
+            return self.array.index(element)
+        except ValueError:
+            return -1
