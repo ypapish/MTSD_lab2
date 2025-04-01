@@ -48,3 +48,6 @@ class arrayDoublyLinkedList:
 
     def clear(self):
         self.array.clear()
+
+    def extend(self, elements):
+        self.array.extend(elements.array)
