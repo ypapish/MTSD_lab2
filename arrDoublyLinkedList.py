@@ -39,3 +39,9 @@ class arrayDoublyLinkedList:
             return self.array.index(element)
         except ValueError:
             return -1
+
+    def findLast(self, element: str):
+        for index in range(len(self.array)-1, -1, -1):
+            if self.array[index] == element:
+                return index
+        return -1
