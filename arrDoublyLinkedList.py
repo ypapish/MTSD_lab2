@@ -7,3 +7,8 @@ class arrayDoublyLinkedList:
 
     def append(self, element: str):
         self.array.append(element)
+
+    def insert(self, element: str, index: int):
+        if index < 0 or index > len(self.array):
+            raise IndexError("Index out of range")
+        self.array.insert(index, element)
