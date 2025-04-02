@@ -1,10 +1,10 @@
 import unittest
-from arrDoublyLinkedList import arrayDoublyLinkedList
+from arrDoublyLinkedList import ArrayDoublyLinkedList
 
 
 class TestArrayDoublyLinkedList(unittest.TestCase):
     def setUp(self):
-        self.List = arrayDoublyLinkedList()
+        self.List = ArrayDoublyLinkedList()
 
     def test_length(self):
         self.assertEqual(self.List.length(), 0)
@@ -106,7 +106,7 @@ class TestArrayDoublyLinkedList(unittest.TestCase):
         self.assertEqual(self.List.get(1), 'B')
         self.assertEqual(self.List.get(2), 'A')
 
-        Empty = arrayDoublyLinkedList()
+        Empty = ArrayDoublyLinkedList()
         Empty.reverse()
 
     def test_findFirst(self):
@@ -136,7 +136,7 @@ class TestArrayDoublyLinkedList(unittest.TestCase):
         self.List.append('A')
         self.List.append('B')
 
-        Other = arrayDoublyLinkedList()
+        Other = ArrayDoublyLinkedList()
         Other.append('C')
         Other.append('D')
 
