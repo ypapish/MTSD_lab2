@@ -95,3 +95,17 @@ class TestDoublyLinkedList(unittest.TestCase):
         Clone.append('C')
         self.assertEqual(Clone.length(), 3)
         self.assertEqual(self.List.length(), 2)
+
+    def test_reverse(self):
+        self.List.append('A')
+        self.List.append('B')
+        self.List.append('C')
+
+        self.List.reverse()
+        self.assertEqual(self.List.get(0), 'C')
+        self.assertEqual(self.List.get(1), 'B')
+        self.assertEqual(self.List.get(2), 'A')
+
+        Empty = DoublyLinkedList()
+        Empty.reverse()
+        self.assertEqual(Empty.length(), 0)
