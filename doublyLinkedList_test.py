@@ -82,3 +82,16 @@ class TestDoublyLinkedList(unittest.TestCase):
             self.List.get(-1)
         with self.assertRaises(IndexError):
             self.List.get(2)
+
+    def test_clone(self):
+        self.List.append('A')
+        self.List.append('B')
+
+        Clone = self.List.clone()
+        self.assertEqual(Clone.length(), 2)
+        self.assertEqual(Clone.get(0), 'A')
+        self.assertEqual(Clone.get(1), 'B')
+
+        Clone.append('C')
+        self.assertEqual(Clone.length(), 3)
+        self.assertEqual(self.List.length(), 2)
