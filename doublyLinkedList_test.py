@@ -155,3 +155,7 @@ class TestDoublyLinkedList(unittest.TestCase):
 
         Other.append('E')
         self.assertEqual(self.List.length(), 4)
+
+
+if __name__ == '__main__':
+    unittest.main()
