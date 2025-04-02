@@ -24,3 +24,25 @@ class DoublyLinkedList:
             self.tail = newNode
         self.size += 1
 
+    def insert(self, element: str, index: int):
+        if index < 0 or index > self.size:
+            raise IndexError("Index out of range")
+        newNode = Node(element)
+        if index == 0:
+            newNode.next = self.head
+            if self.head:
+                self.head.prev = newNode
+            self.head = newNode
+            if self.size == 0:
+                self.tail = newNode
+        elif index == self.size:
+            self.append(element)
+        else:
+            current = self.head
+            for _ in range(index):
+                current = current.next
+            newNode.next = current
+            newNode.prev = current.prev
+            current.prev.next = newNode
+            current.prev = newNode
+        self.size += 1
