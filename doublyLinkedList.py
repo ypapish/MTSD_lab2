@@ -94,3 +94,11 @@ class DoublyLinkedList:
         for _ in range(index):
             current = current.next
         return current.value
+
+    def clone(self):
+        newList = DoublyLinkedList()
+        current = self.head
+        while current:
+            newList.append(current.value)
+            current = current.next
+        return newList
