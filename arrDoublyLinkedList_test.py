@@ -114,3 +114,14 @@ class TestArrayDoublyLinkedList(unittest.TestCase):
         self.List.append('B')
         self.List.append('A')
         self.List.append('C')
+
+    def test_findLast(self):
+        self.List.append('A')
+        self.List.append('B')
+        self.List.append('A')
+        self.List.append('C')
+
+        self.assertEqual(self.List.findLast('A'), 2)
+        self.assertEqual(self.List.findLast('B'), 1)
+        self.assertEqual(self.List.findLast('C'), 3)
+        self.assertEqual(self.List.findLast('X'), -1)
