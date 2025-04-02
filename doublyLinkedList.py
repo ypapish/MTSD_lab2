@@ -86,3 +86,11 @@ class DoublyLinkedList:
                     self.tail = current.prev
                 self.size -= 1
             current = nextNode
+
+    def get(self, index: int):
+        if index < 0 or index >= self.size:
+            raise IndexError("Index out of range")
+        current = self.head
+        for _ in range(index):
+            current = current.next
+        return current.value
