@@ -109,3 +109,14 @@ class TestDoublyLinkedList(unittest.TestCase):
         Empty = DoublyLinkedList()
         Empty.reverse()
         self.assertEqual(Empty.length(), 0)
+
+    def test_findFirst(self):
+        self.List.append('A')
+        self.List.append('B')
+        self.List.append('A')
+        self.List.append('C')
+
+        self.assertEqual(self.List.findFirst('A'), 0)
+        self.assertEqual(self.List.findFirst('B'), 1)
+        self.assertEqual(self.List.findFirst('C'), 3)
+        self.assertEqual(self.List.findFirst('X'), -1)
