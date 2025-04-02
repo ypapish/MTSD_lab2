@@ -70,3 +70,19 @@ class DoublyLinkedList:
             current.next.prev = current.prev
         self.size -= 1
         return removedValue
+
+    def deleteAll(self, element: str):
+        current = self.head
+        while current:
+            nextNode = current.next
+            if current.value == element:
+                if current.prev:
+                    current.prev.next = current.next
+                if current.next:
+                    current.next.prev = current.prev
+                if current == self.head:
+                    self.head = current.next
+                if current == self.tail:
+                    self.tail = current.prev
+                self.size -= 1
+            current = nextNode
