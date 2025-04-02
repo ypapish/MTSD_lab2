@@ -36,3 +36,22 @@ class TestArrayDoublyLinkedList(unittest.TestCase):
             self.List.insert('E', -1)
         with self.assertRaises(IndexError):
             self.List.insert('E', 5)
+    
+    def test_delete(self):
+        self.List.append('A')
+        self.List.append('B')
+        self.List.append('C')
+
+        self.assertEqual(self.List.delete(1), 'B')
+        self.assertEqual(self.List.length(), 2)
+
+        self.assertEqual(self.List.delete(0), 'A')
+        self.assertEqual(self.List.length(), 1)
+
+        self.assertEqual(self.List.delete(0), 'C')
+        self.assertEqual(self.List.length(), 0)
+
+        with self.assertRaises(IndexError):
+            self.List.delete(-1)
+        with self.assertRaises(IndexError):
+            self.List.delete(0)
