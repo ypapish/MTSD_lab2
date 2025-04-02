@@ -13,3 +13,14 @@ class DoublyLinkedList:
 
     def length(self):
         return self.size
+
+    def append(self, element: str):
+        newNode = Node(element)
+        if not self.head:
+            self.head = self.tail = newNode
+        else:
+            self.tail.next = newNode
+            newNode.prev = self.tail
+            self.tail = newNode
+        self.size += 1
+
