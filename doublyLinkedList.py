@@ -46,3 +46,27 @@ class DoublyLinkedList:
             current.prev.next = newNode
             current.prev = newNode
         self.size += 1
+
+    def delete(self, index: int):
+        if index < 0 or index >= self.size:
+            raise IndexError("Index out of range")
+        if index == 0:
+            removedValue = self.head.value
+            self.head = self.head.next
+            if self.head:
+                self.head.prev = None
+            else:
+                self.tail = None
+        elif index == self.size - 1:
+            removedValue = self.tail.value
+            self.tail = self.tail.prev
+            self.tail.next = None
+        else:
+            current = self.head
+            for _ in range(index):
+                current = current.next
+            removedValue = current.value
+            current.prev.next = current.next
+            current.next.prev = current.prev
+        self.size -= 1
+        return removedValue
