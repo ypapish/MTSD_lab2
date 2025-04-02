@@ -70,3 +70,15 @@ class TestArrayDoublyLinkedList(unittest.TestCase):
 
         self.List.deleteAll('X')
         self.assertEqual(self.List.length(), 2)
+
+    def test_get(self):
+        self.List.append('A')
+        self.List.append('B')
+
+        self.assertEqual(self.List.get(0), 'A')
+        self.assertEqual(self.List.get(1), 'B')
+
+        with self.assertRaises(IndexError):
+            self.List.get(-1)
+        with self.assertRaises(IndexError):
+            self.List.get(2)
