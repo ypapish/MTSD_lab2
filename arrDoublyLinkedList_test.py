@@ -108,3 +108,9 @@ class TestArrayDoublyLinkedList(unittest.TestCase):
 
         Empty = arrayDoublyLinkedList()
         Empty.reverse()
+
+    def test_findFirst(self):
+        self.List.append('A')
+        self.List.append('B')
+        self.List.append('A')
+        self.List.append('C')
