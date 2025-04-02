@@ -109,3 +109,13 @@ class DoublyLinkedList:
         while current:
             current.next, current.prev = current.prev, current.next
             current = current.prev
+
+    def findFirst(self, element: str):
+        current = self.head
+        index = 0
+        while current:
+            if current.value == element:
+                return index
+            current = current.next
+            index += 1
+        return -1
