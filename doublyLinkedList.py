@@ -133,3 +133,9 @@ class DoublyLinkedList:
     def clear(self):
         self.head = self.tail = None
         self.size = 0
+
+    def extend(self, elements):
+        current = elements.head
+        while current:
+            self.append(current.value)
+            current = current.next
