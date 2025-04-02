@@ -55,3 +55,18 @@ class TestArrayDoublyLinkedList(unittest.TestCase):
             self.List.delete(-1)
         with self.assertRaises(IndexError):
             self.List.delete(0)
+
+    def test_deleteAll(self):
+        self.List.append('A')
+        self.List.append('B')
+        self.List.append('A')
+        self.List.append('C')
+        self.List.append('A')
+
+        self.List.deleteAll('A')
+        self.assertEqual(self.List.length(), 2)
+        self.assertEqual(self.List.get(0), 'B')
+        self.assertEqual(self.List.get(1), 'C')
+
+        self.List.deleteAll('X')
+        self.assertEqual(self.List.length(), 2)
