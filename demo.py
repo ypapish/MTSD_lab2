@@ -202,3 +202,7 @@ def demo_doubly_linked_list():
     except IndexError as e:
         print(f"Get error: {e}")
 
+
+if __name__ == "__main__":
+    demo_arr_doubly_linked_list()
+    demo_doubly_linked_list()
