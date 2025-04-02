@@ -131,3 +131,16 @@ class TestArrayDoublyLinkedList(unittest.TestCase):
         self.List.append('B')
         self.List.clear()
         self.assertEqual(self.List.length(), 0)
+
+    def test_extend(self):
+        self.List.append('A')
+        self.List.append('B')
+
+        Other = arrayDoublyLinkedList()
+        Other.append('C')
+        Other.append('D')
+
+        self.List.extend(Other)
+        self.assertEqual(self.List.length(), 4)
+        self.assertEqual(self.List.get(2), 'C')
+        self.assertEqual(self.List.get(3), 'D')
