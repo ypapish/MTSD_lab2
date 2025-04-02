@@ -102,3 +102,10 @@ class DoublyLinkedList:
             newList.append(current.value)
             current = current.next
         return newList
+
+    def reverse(self):
+        current = self.head
+        self.head, self.tail = self.tail, self.head
+        while current:
+            current.next, current.prev = current.prev, current.next
+            current = current.prev
