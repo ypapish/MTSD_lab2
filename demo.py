@@ -1,4 +1,5 @@
 from arrDoublyLinkedList import arrayDoublyLinkedList
+from doublyLinkedList import DoublyLinkedList
 
 
 def demo_arr_doubly_linked_list():
