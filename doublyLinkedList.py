@@ -10,3 +10,6 @@ class DoublyLinkedList:
         self.head = None
         self.tail = None
         self.size = 0
+
+    def length(self):
+        return self.size
