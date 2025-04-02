@@ -1,4 +1,4 @@
-class arrayDoublyLinkedList:
+class ArrayDoublyLinkedList:
     def __init__(self):
         self.array = []
     
@@ -27,7 +27,7 @@ class arrayDoublyLinkedList:
         return self.array[index]
 
     def clone(self):
-        newDoubleLinkedList = arrayDoublyLinkedList()
+        newDoubleLinkedList = ArrayDoublyLinkedList()
         newDoubleLinkedList.array = self.array.copy()
         return newDoubleLinkedList
 
