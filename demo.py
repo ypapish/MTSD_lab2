@@ -1,4 +1,4 @@
-from arrDoublyLinkedList import arrayDoublyLinkedList
+from arrDoublyLinkedList import ArrayDoublyLinkedList
 from doublyLinkedList import DoublyLinkedList
 
 
@@ -6,7 +6,7 @@ def demo_arr_doubly_linked_list():
     print("Demonstrating arrayDoublyLinkedList")
 
     print("\n1. Creating a list")
-    adll = arrayDoublyLinkedList()
+    adll = ArrayDoublyLinkedList()
     print(f"Created an empty list. Length: {adll.length()}")
 
     print("\n2. Adding elements (append)")
@@ -67,7 +67,7 @@ def demo_arr_doubly_linked_list():
     print("List after reversing:", [adll.get(i) for i in range(adll.length())])
 
     print("\n10. Extending the list (extend)")
-    other = arrayDoublyLinkedList()
+    other = ArrayDoublyLinkedList()
     other.append('1')
     other.append('2')
     print("Other list:", [other.get(i) for i in range(other.length())])
