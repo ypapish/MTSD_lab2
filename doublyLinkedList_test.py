@@ -131,3 +131,11 @@ class TestDoublyLinkedList(unittest.TestCase):
         self.assertEqual(self.List.findLast('B'), 1)
         self.assertEqual(self.List.findLast('C'), 3)
         self.assertEqual(self.List.findLast('X'), -1)
+
+    def test_clear(self):
+        self.List.append('A')
+        self.List.append('B')
+        self.List.clear()
+        self.assertEqual(self.List.length(), 0)
+        self.assertIsNone(self.List.head)
+        self.assertIsNone(self.List.tail)
