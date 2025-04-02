@@ -144,3 +144,6 @@ class TestArrayDoublyLinkedList(unittest.TestCase):
         self.assertEqual(self.List.length(), 4)
         self.assertEqual(self.List.get(2), 'C')
         self.assertEqual(self.List.get(3), 'D')
+
+if __name__ == '__main__':
+    unittest.main()
