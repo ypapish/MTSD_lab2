@@ -96,3 +96,109 @@ def print_list(dll):
         elements.append(current.value)
         current = current.next
     print(f"List: {elements}, Length: {dll.length()}")
+
+def demo_doubly_linked_list():
+    print("\nDemonstrating DoublyLinkedList")
+
+    print("\n1. Creating a list")
+    dll = DoublyLinkedList()
+    print(f"Created an empty list. Length: {dll.length()}")
+
+    print("\n2. Adding elements (append)")
+    dll.append('A')
+    dll.append('B')
+    dll.append('C')
+    print_list(dll)
+
+    print("\n3. Inserting elements (insert)")
+    dll.insert('X', 1)
+    dll.insert('Y', 0)
+    dll.insert('Z', dll.length())
+    print("Inserted 'X' at position 1, 'Y' at 0, 'Z' at the end")
+    print_list(dll)
+
+    print("\n4. Removing an element by index (delete)")
+    removed = dll.delete(2)
+    print(f"Removed element at position 2: '{removed}'")
+    print_list(dll)
+
+    print("\n5. Removing all occurrences of an element (deleteAll)")
+    dll.append('B')
+    dll.append('B')
+    print("Added two 'B' elements")
+    print_list(dll)
+    dll.deleteAll('B')
+    print("Removed all 'B' elements")
+    print_list(dll)
+
+    print("\n6. Finding the first occurrence (findFirst)")
+    dll.append('C')
+    dll.append('D')
+    print("Added 'C' and 'D'")
+    print_list(dll)
+    index = dll.findFirst('C')
+    print(f"First occurrence of 'C' at position: {index}")
+    index = dll.findFirst('Nonexistent')
+    print(f"Search for nonexistent element: {index}")
+
+    print("\n7. Finding the last occurrence (findLast)")
+    dll.append('C')
+    print("Added another 'C'")
+    print_list(dll)
+    index = dll.findLast('C')
+    print(f"Last occurrence of 'C' at position: {index}")
+
+    print("\n8. Cloning the list (clone)")
+    clone = dll.clone()
+    print("Cloned the list:")
+    print("Original:", end=" ")
+    print_list(dll)
+    print("Clone:", end=" ")
+    print_list(clone)
+    clone.append('New')
+    print("Added 'New' to the clone")
+    print("Original:", end=" ")
+    print_list(dll)
+    print("Clone:", end=" ")
+    print_list(clone)
+
+    print("\n9. Reversing the list (reverse)")
+    print("Before reversing:", end=" ")
+    print_list(dll)
+    dll.reverse()
+    print("After reversing:", end=" ")
+    print_list(dll)
+
+    print("\n10. Extending the list (extend)")
+    other = DoublyLinkedList()
+    other.append('1')
+    other.append('2')
+    print("Other list:", end=" ")
+    print_list(other)
+    dll.extend(other)
+    print("Current list after extending:", end=" ")
+    print_list(dll)
+
+    print("\n11. Clearing the list (clear)")
+    dll.clear()
+    print(f"List cleared. Length: {dll.length()}")
+
+    print("\n12. Checking node links")
+    dll.append('A')
+    dll.append('B')
+    dll.append('C')
+    print("Added A, B, C")
+    print(f"Head: {dll.head.value}, Tail: {dll.tail.value}")
+    print(f"Head.next: {dll.head.next.value}, Tail.prev: {dll.tail.prev.value}")
+
+    print("\n13. Error handling")
+    try:
+        dll.insert('X', 5)
+    except IndexError as e:
+        print(f"Insert error: {e}")
+
+    try:
+        dll.get(10)
+    except IndexError as e:
+        print(f"Get error: {e}")
+
