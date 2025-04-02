@@ -129,3 +129,7 @@ class DoublyLinkedList:
             current = current.prev
             index -= 1
         return -1
+
+    def clear(self):
+        self.head = self.tail = None
+        self.size = 0
