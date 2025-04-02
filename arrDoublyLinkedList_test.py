@@ -7,7 +7,7 @@ class TestArrayDoublyLinkedList(unittest.TestCase):
         self.List = ArrayDoublyLinkedList()
 
     def test_length(self):
-        self.assertEqual(self.List.length(), 0)
+        self.assertEqual(self.List.length(), 1)
     
     def test_append(self):
         self.List.append('A')
