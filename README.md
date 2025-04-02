@@ -7,9 +7,11 @@ This project implements a doubly linked list, along with an alternative implemen
 ## Variant
 
 My number on the group list - 17.
+
 17 % 4 = 1
 
 **Initial implementation of the list** – doubly linked list.
+
 **Second implementation of the list** – list based on built-in arrays/lists.
 
 ## Instructions
