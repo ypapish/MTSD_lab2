@@ -139,3 +139,19 @@ class TestDoublyLinkedList(unittest.TestCase):
         self.assertEqual(self.List.length(), 0)
         self.assertIsNone(self.List.head)
         self.assertIsNone(self.List.tail)
+
+    def test_extend(self):
+        self.List.append('A')
+        self.List.append('B')
+
+        Other = DoublyLinkedList()
+        Other.append('C')
+        Other.append('D')
+
+        self.List.extend(Other)
+        self.assertEqual(self.List.length(), 4)
+        self.assertEqual(self.List.get(2), 'C')
+        self.assertEqual(self.List.get(3), 'D')
+
+        Other.append('E')
+        self.assertEqual(self.List.length(), 4)
